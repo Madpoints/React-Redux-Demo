@@ -19,8 +19,14 @@
                 name: 'Ken',
                 age: 30
             }
-            handleClick(event) {
-                console.log(event.target);     
+            // arrow notation gives access to component state
+            handleClick = (event) => {
+                //console.log(event.target)
+                this.setState({
+                    name: 'Ryu',
+                    age: 33
+                })
+                console.log(this.state)   
             }
             handleMouseOver(event) {
                 console.log(event.target, event.pageX)
