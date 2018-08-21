@@ -16,32 +16,26 @@
     <script type="text/babel">
         class App extends React.Component {
             state = {
-                name: 'Ken',
-                age: 30
+                name: 'Geralt',
+                age: 100
             }
-            // arrow notation gives access to component state
-            handleClick = (event) => {
-                //console.log(event.target)
+            handleChange = (event) => {
                 this.setState({
-                    name: 'Ryu',
-                    age: 33
+                    name: event.target.value
                 })
-                console.log(this.state)   
             }
-            handleMouseOver(event) {
-                console.log(event.target, event.pageX)
-            }
-            handleCopy(event) {
-                console.log("Don't copy me")
+            handleSubmit = (event) => {
+                event.preventDefault()
+                console.log(this.state.name) 
             }
             render() {
                 return (
                     <div className="app-content">
-                        <h1>Hello, World</h1>
-                        <p>My name is: { this.state.name } I am { this.state.age }</p>
-                        <p onCopy={this.handleCopy}>Copy me</p>
-                        <b onMouseOver={this.handleMouseOver}>Hover</b>
-                        <button onClick={this.handleClick}>Click</button>
+                        <h1>My name is {this.state.name}</h1>
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" name="name" onChange={this.handleChange}/>
+                            <input type="submit" value="submit"/>
+                        </form>
                     </div>       
                 )
             }
