@@ -19,11 +19,23 @@
                 name: 'Ken',
                 age: 30
             }
+            handleClick(event) {
+                console.log(event.target);     
+            }
+            handleMouseOver(event) {
+                console.log(event.target, event.pageX)
+            }
+            handleCopy(event) {
+                console.log("Don't copy me")
+            }
             render() {
                 return (
                     <div className="app-content">
                         <h1>Hello, World</h1>
                         <p>My name is: { this.state.name } I am { this.state.age }</p>
+                        <p onCopy={this.handleCopy}>Copy me</p>
+                        <b onMouseOver={this.handleMouseOver}>Hover</b>
+                        <button onClick={this.handleClick}>Click</button>
                     </div>       
                 )
             }
