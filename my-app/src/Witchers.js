@@ -2,14 +2,21 @@ import React, { Component } from 'react';
 
 class Witchers extends Component {
 	render() {
-		// console.log(this.props)
-		const {name, age, school} = this.props
+		const {witchers} = this.props
+		const witcherList = witchers.map(witcher => {
+			return(
+				<div className="witcher" key={witcher.id}>
+					<div>Name: {witcher.name}</div>
+					<div>Age: {witcher.age}</div>
+					<div>School: {witcher.school}</div>	
+					<hr></hr>	
+				</div>	
+			)	
+		})
 		return(
-			<div className="witcher">
-				<div>Name: {name}</div>
-				<div>Age: {age}</div>
-				<div>School: {school}</div>		
-			</div>		
+			<div className="witcher-list">
+				{witcherList}
+			</div>	
 		)
 	}
 }
