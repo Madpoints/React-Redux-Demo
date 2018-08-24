@@ -16,7 +16,14 @@ class App extends Component {
 		this.setState({
 			witchers: witchers
 		})
-		// console.log(witcher)
+	}
+	deleteWitcher = (id) => {
+		let witchers = this.state.witchers.filter(witcher => {
+			return witcher.id !== id
+		})
+		this.setState({
+			witchers: witchers
+		})
 	}
 	render() {
 		return (
@@ -26,7 +33,7 @@ class App extends Component {
 				<hr></hr>
 				<AddWitchers addWitcher={this.addWitcher}/>
 				<hr></hr>
-				<Witchers witchers={this.state.witchers}/>
+				<Witchers witchers={this.state.witchers} deleteWitcher={this.deleteWitcher}/>
 			</div>
 		);
 	}
