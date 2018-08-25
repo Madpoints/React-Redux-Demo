@@ -25,6 +25,16 @@ class App extends Component {
 			witchers: witchers
 		})
 	}
+
+	// component lifecycle methods
+	componentDidMount() {
+		console.log('component mounted')
+	}
+	componentDidUpdate(prevProps, prevState) {
+		console.log('component updated')
+		console.log(prevProps, prevState)
+	}
+
 	render() {
 		return (
 			<div className="App">
