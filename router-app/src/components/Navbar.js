@@ -8,7 +8,7 @@ const Navbar = (props) => {
   return(
     <nav className="nav-wrapper purple darken-3">
       <div className="contain">
-        <a className="brand-logo">React Router App</a>
+        <a className="brand-logo">React Witcher App</a>
         <ul className="right">
           <li><Link to="/">Home</Link></li>  
           <li><NavLink to="/about">About</NavLink></li>  
