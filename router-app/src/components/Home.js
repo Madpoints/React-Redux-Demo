@@ -15,10 +15,10 @@ class Home extends Component {
             <div className="card-content">
               <Link to={'/' + post.id}>
                 <span className="card-title purple-text">
-                  {post.title}
+                  {post.name}
                 </span>
               </Link>
-              <p>{post.body}</p>
+              <p>{post.school}</p>
             </div>
           </div>  
         )
